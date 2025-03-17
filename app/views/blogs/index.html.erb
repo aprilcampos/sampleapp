@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Blog title</th>
+      <th>Blog Title</th>
       <th>Body</th>
       <th colspan="4"></th>
     </tr>
@@ -19,7 +19,7 @@
       <td><%= link_to blog.status, toggle_status_blog_path(blog) %></td>
       <td><%= link_to 'Show', blog %></td>
       <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-      <td><%= link_to "Delete Blog Item", blog, data: {
+      <td><%= link_to "Delete Post", blog, data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
                   } %></td>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to "New blog", new_blog_path %>
+<%= link_to 'New Blog', new_blog_path %>
