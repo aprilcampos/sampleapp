@@ -77,4 +77,4 @@ end
 
 gem 'bootstrap', '~> 5.3.3'
 
-gem 'accampos_view_tool', git: 'https://github.com/aprilcampos/accampos_view_tool'
+gem 'accampos_view_tool', '~> 0.1.0'

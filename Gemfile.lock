@@ -1,12 +1,7 @@
-GIT
-  remote: https://github.com/aprilcampos/accampos_view_tool
-  revision: e28e8a533218dbfa9c8b1771c516211cbd16662f
-  specs:
-    accampos_view_tool (0.1.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
+    accampos_view_tool (0.1.0)
     actioncable (7.0.7)
       actionpack (= 7.0.7)
       activesupport (= 7.0.7)
@@ -264,7 +259,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
-  accampos_view_tool!
+  accampos_view_tool (~> 0.1.0)
   bootsnap
   bootstrap (~> 5.3.3)
   byebug
