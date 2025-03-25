@@ -78,3 +78,5 @@ end
 gem 'bootstrap', '~> 5.3.3'
 
 gem 'accampos_view_tool', '~> 0.1.0'
+
+gem 'petergate', '~> 3.0'
