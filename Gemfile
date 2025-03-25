@@ -76,3 +76,5 @@ group :test do
 end
 
 gem 'bootstrap', '~> 5.3.3'
+
+gem 'accampos_view_tool', git: 'https://github.com/aprilcampos/accampos_view_tool'

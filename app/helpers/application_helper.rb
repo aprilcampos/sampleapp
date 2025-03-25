@@ -15,4 +15,8 @@ module ApplicationHelper
       content_tag(:p, greeting, class: "source-greeting")
     end
   end
+
+  def copyright_generator
+    AccamposViewTool::Renderer.copyright 'April Campos', 'All rights reserved'
+  end
 end
