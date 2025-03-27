@@ -17,6 +17,6 @@ module ApplicationHelper
   end
 
   def copyright_generator
-    AccamposViewTool::Renderer.copyright 'April Campos', 'All rights reserved'
+    AccamposViewTool::Renderer.copyright 'April Campos', 'All rights reserved.'
   end
 end
