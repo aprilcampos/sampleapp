@@ -1,6 +1,6 @@
 class PortfoliosController < ApplicationController
+  before_action :set_portfolio_item, only: [:edit, :show, :update, :destroy]
   layout "portfolio"
-  access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
   
   def index
     @portfolio_items = Portfolio.all
@@ -20,39 +20,30 @@ class PortfoliosController < ApplicationController
 
     respond_to do |format|
       if @portfolio_item.save
-        format.html { redirect_to portfolios_path, notice: "Your portfolio item is now live." }
-        format.json { render :show, status: :created, location: @portfolio_item }
+        format.html { redirect_to portfolios_path, notice: 'Your portfolio item is now live.' }
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @portfolio_item.errors, status: :unprocessable_entity }
+        format.html { render :new }
       end
     end
   end
 
-  def show
-    @portfolio_item = Portfolio.find(params[:id])  
-  end
-  
   def edit
-    @portfolio_item = Portfolio.find(params[:id])
+  end
+
+  def show
   end
 
   def update
-    @portfolio_item = Portfolio.find(params[:id])
-
     respond_to do |format|
       if @portfolio_item.update(portfolio_params)
-        format.html { redirect_to portfolios_path, notice: "Portfolio item was successfully updated." }
+        format.html { redirect_to portfolios_path, notice: 'The record successfully updated.' }
       else
         format.html { render :edit }
       end
     end
-	end
+  end
 
   def destroy
-    #perform the find/lookup id
-    @portfolio_item = Portfolio.find(params[:id])
-
     #destroy/delete the record
     @portfolio_item.destroy
 
@@ -65,11 +56,15 @@ class PortfoliosController < ApplicationController
   private
 
   def portfolio_params
-    params.require(:portfolio).permit(:title, 
+  params.require(:portfolio).permit(:title, 
                                       :subtitle, 
                                       :body, 
                                       technologies_attributes: [:name]
                                      )
+  end
+
+  def set_portfolio_item
+    @portfolio_item = Portfolio.find(params[:id])
   end
 
 end

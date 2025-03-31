@@ -1,8 +1,7 @@
-<h1>Hi, <%= current_user.first_name %></h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-<h1>Blog Posts</h1>
-<%= @posts.inspect %>
-
-<h1>Skills</h1>
-<%= @skills.inspect %>      
+<div class="inner cover">
+  <h1 class="cover-heading">Welcome.</h1>
+  <p class="lead">Software development should be built on clarity and collaboration. When I work on a project, I ensure that every stage is transparent, keeping clients informed while delivering a high-quality, well-crafted product.</p>
+  <p class="lead">
+    <%= link_to "About Me", about_me_path, class: "btn btn-lg btn-secondary" %>
+  </p>
+</div>
