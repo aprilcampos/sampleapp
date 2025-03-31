@@ -1,12 +1,12 @@
 # April Campos Portfolio Application
 
 This ongoing Ruby on Rails project portfolio has multiple features like:
-- CRUD for Blogs and Portfolio
+- CRUD for Blogs and Portfolios
 - Authentication (Login/Log Out/Sign up)
 - Authorization
 - Custom Routes
-- Creating Custom Ruby Gem
-- Implementing design
+- Custom Ruby Gem
+- Implemented Design
 
 Preview:
 
