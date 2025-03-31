@@ -1,24 +1,17 @@
-# README
+# April Campos Portfolio Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+This ongoing Ruby on Rails project portfolio has multiple features like:
 
-* Ruby version
+- CRUD for Blogs and Portfolio
+- Authentication
+- Authorization
+- Custom Routes
+- Creating Custom Ruby Gem
+- Implementing design
 
-* System dependencies
+Preview:
 
-* Configuration
+![image](https://github.com/user-attachments/assets/2b46e680-21d9-40b3-b78c-f3de51cdaa5d)
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![image](https://github.com/user-attachments/assets/1d2d8cf6-baa6-4028-9673-8643aec61326)
