@@ -81,3 +81,7 @@ gem 'bootstrap', '~> 5.3.3'
 gem 'accampos_view_tool', '~> 0.1.0'
 
 gem 'petergate', '~> 3.0'
+
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.9'
+
+gem 'kaminari', '~> 1.2', '>= 1.2.2'
