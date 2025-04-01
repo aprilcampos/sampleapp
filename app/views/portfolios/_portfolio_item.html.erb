@@ -1,6 +1,13 @@
-<p><%= link_to portfolio_item.title, portfolio_show_path(portfolio_item) %></p>
-<p><%= portfolio_item.subtitle %></p>
-<p><%= portfolio_item.body %></p>
-<%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? %>
-<%= link_to "Edit", edit_portfolio_path(portfolio_item) if logged_in?(:site_admin) %>
-<%= link_to "Delete Portfolio Item", portfolio_path(portfolio_item), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } if logged_in?(:site_admin) %>
+<div class="col">
+  <div class="card shadow-sm">
+    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+
+    <%#= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? %>
+
+    <div class="card-body">
+      <p class="card-text">
+        <span><%= link_to portfolio_item.title, portfolio_show_path(portfolio_item) %></span> <%= portfolio_item.subtitle %>
+      </p>
+    </div>
+  </div>
+</div>
