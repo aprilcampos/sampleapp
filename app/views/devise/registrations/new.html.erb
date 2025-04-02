@@ -39,14 +39,15 @@
 
         </div>
 
-        <div class="col-md-10"></div>
-        <div class="col-md-2">
-          <div class="form-group">
-            <%= f.submit "Sign up", class: 'btn btn-primary btn-block' %>
+        
+        <div class="d-flex justify-content-end align-items-end gap-2 mt-3">
+          <div>
+            <%= f.submit "Sign up", class: 'btn btn-primary' %>
           </div>
-
-          <div class="auth-links register-text">
-            <%= render "devise/shared/links" %>
+          <div>
+            <button class="btn btn-secondary text-black">
+              <%= render "devise/shared/links" %>
+            </button>
           </div>
         </div>
       </div>

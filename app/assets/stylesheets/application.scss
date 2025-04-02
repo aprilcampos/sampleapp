@@ -5,6 +5,11 @@
  */
 
 /* Links */
+
+.bg-white {
+  background-color: #fff;
+}
+
 a,
 a:focus,
 a:hover {
@@ -17,8 +22,8 @@ a:hover {
 .btn-secondary:focus {
   color: #333;
   text-shadow: none; /* Prevent inheritance from `body` */
-  background-color: #fff;
-  border: .05rem solid #fff;
+  // background-color: #fff;
+  // border: .05rem solid #fff;
 }
 
 
@@ -168,6 +173,12 @@ body {
 .card-block {
   color: black;
   text-align: left;
+  padding: 1rem;
+  background-color: #ebedef;
+}
+
+.form-group {
+  margin-bottom: 10px;
 }
 
 .auth-links a {
