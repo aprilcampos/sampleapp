@@ -4,7 +4,13 @@ class PortfoliosController < ApplicationController
   access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
   
   def index
-    @portfolio_items = Portfolio.by_position
+    @portfolio_items = Portfolio.order(:position)
+  end  
+  
+  def sort
+    @portfolio_item = Portfolio.find(params[:id])
+    @portfolio_item.insert_at(params[:position].to_i + 1)
+    head :ok
   end
 
   def angular

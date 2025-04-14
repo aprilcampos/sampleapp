@@ -1,4 +1,6 @@
 class Portfolio < ApplicationRecord
+  acts_as_list
+  
 	has_many :technologies
 	accepts_nested_attributes_for :technologies, 
 								                reject_if: lambda { |attrs| attrs['name'].blank? }
@@ -8,10 +10,6 @@ class Portfolio < ApplicationRecord
 
   def self.angular
     where(subtitle: "Angular")
-  end
-
-  def self.by_position
-    order("position ASC")
   end
 
   scope :ruby_on_rails_portfolio_items, -> { where(subtitle: "Ruby on Rails") }

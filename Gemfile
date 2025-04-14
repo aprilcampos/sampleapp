@@ -16,7 +16,7 @@ gem "pg", "~> 1.1"
 gem "puma", "~> 5.0"
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
-gem "importmap-rails"
+gem 'importmap-rails', '~> 1.1', '>= 1.1.5'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
@@ -85,3 +85,5 @@ gem 'petergate', '~> 3.0'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.9'
 
 gem 'kaminari', '~> 1.2', '>= 1.2.2'
+
+gem 'acts_as_list'
