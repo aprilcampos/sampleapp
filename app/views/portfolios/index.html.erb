@@ -1,11 +1,15 @@
 <div class="album py-5 bg-body-tertiary">
   <div class="container">
-    <div data-controller="sortable" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-      <% @portfolio_items.each do |portfolio_item| %>
-        <div data-id="<%= portfolio_item.id %>">
-          <%= render partial: 'portfolio_item', locals: { portfolio_item: portfolio_item } %>
-        </div>
-      <% end %>
-    </div>
+    <% if logged_in?(:site_admin) %>
+      <div data-controller="sortable" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    <% else %>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    <% end %>
+        <% @portfolio_items.each do |portfolio_item| %>
+          <div data-id="<%= portfolio_item.id %>">
+            <%= render partial: 'portfolio_item', locals: { portfolio_item: portfolio_item } %>
+          </div>
+        <% end %>
+      </div> <!-- close row -->
   </div>
 </div>
