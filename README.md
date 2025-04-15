@@ -6,7 +6,7 @@ This ongoing Ruby on Rails project portfolio has multiple features like:
 - Authorization
 - Custom Routes
 - Custom Ruby Gem
-- Image Uploader
+- Integrated image uploads using AWS S3
 - Implemented Design
 
 Preview:

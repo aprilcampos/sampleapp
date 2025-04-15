@@ -87,3 +87,11 @@ gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.9'
 gem 'kaminari', '~> 1.2', '>= 1.2.2'
 
 gem 'acts_as_list'
+
+gem 'carrierwave', '~> 3.1', '>= 3.1.1'
+
+gem 'mini_magick', '~> 5.2'
+
+gem 'carrierwave-aws', '~> 1.6'
+
+gem 'dotenv-rails', '~> 3.1', '>= 3.1.8'
