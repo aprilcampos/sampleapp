@@ -1,7 +1,7 @@
 module Placeholder 
-    extend ActiveSupport::Concern
+  extend ActiveSupport::Concern
 
-    def self.image_generator(height:, width:)
-        "https://pixy.org/ph/06139e/7a7a7a/frame/crosshairs/#{height}x#{width}.png"
-    end
+  def self.image_generator(height:, width:)
+      "http://placehold.it/#{height}x#{width}"
+  end
 end
