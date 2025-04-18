@@ -3,17 +3,17 @@
 This ongoing Ruby on Rails project portfolio has multiple features like:
 - CRUD for Blogs and Portfolios
 - Authentication (Login/Log Out/Sign up)
-- Authorization
+- Authorization Access
 - Custom Routes
 - Custom Ruby Gem
-- Integrated image uploads using AWS S3
+- AWS services (S3 and IAM)
 - Implemented Design
 
 Preview:
 
 ![image](https://github.com/user-attachments/assets/6f31aba0-b7e9-4d1b-8e31-2063a2f2ef8b)
 
-![image](https://github.com/user-attachments/assets/ed00f32b-09db-4fcd-ac5a-f8ee01da6bc8)
+![image](https://github.com/user-attachments/assets/5d104f09-db42-4e66-b9aa-5c3f027315d3)
 
 ![image](https://github.com/user-attachments/assets/cf48510e-c529-490c-85e0-1cb3ed573579)
 
