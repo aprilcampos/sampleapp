@@ -23,12 +23,14 @@ class PortfoliosController < ApplicationController
 
   def create
     @portfolio_item = Portfolio.new(portfolio_params)
-
+  
     respond_to do |format|
       if @portfolio_item.save
         format.html { redirect_to portfolios_path, notice: 'Your portfolio item is now live.' }
+        format.turbo_stream { render turbo_stream: turbo_stream.replace('portfolio_form', partial: 'form', locals: { portfolio_item: @portfolio_item }) }
       else
         format.html { render :new }
+        format.turbo_stream { render turbo_stream: turbo_stream.replace('portfolio_form', partial: 'form', locals: { portfolio_item: @portfolio_item }) }
       end
     end
   end
@@ -42,12 +44,18 @@ class PortfoliosController < ApplicationController
   def update
     respond_to do |format|
       if @portfolio_item.update(portfolio_params)
-        format.html { redirect_to portfolios_path, notice: 'The record successfully updated.' }
+        format.html { redirect_to portfolios_path, notice: 'The record was successfully updated.' }
+        format.turbo_stream do
+          render turbo_stream: turbo_stream.replace('portfolio_form', partial: 'form', locals: { portfolio_item: @portfolio_item })
+        end
       else
         format.html { render :edit }
+        format.turbo_stream do
+          render turbo_stream: turbo_stream.replace('portfolio_form', partial: 'form', locals: { portfolio_item: @portfolio_item })
+        end
       end
     end
-  end
+  end  
 
   def destroy
     #destroy/delete the record
