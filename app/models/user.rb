@@ -15,6 +15,8 @@ class User < ApplicationRecord
 
   validates_presence_of :name
 
+  has_many :comments, dependent: :destroy
+
   after_create :assign_first_user_as_admin
 
   def first_name
