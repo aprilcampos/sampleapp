@@ -97,3 +97,5 @@ gem 'carrierwave-aws', '~> 1.6'
 gem 'dotenv-rails', '~> 3.1', '>= 3.1.8'
 
 gem 'cocoon', '~> 1.2', '>= 1.2.15'
+
+gem 'redis', '~> 5.4'
