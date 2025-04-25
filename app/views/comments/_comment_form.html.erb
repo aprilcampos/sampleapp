@@ -1,10 +1,16 @@
 <% unless current_user.is_a? GuestUser %>
-  <%= form_for @comment, url: '#' do |f| %>
+  <div
+    data-controller="comment-form"
+    data-comment-form-blog-id-value="<%= @blog.id %>">
     <div class="form-group">
-      <%= f.label :content %>
-      <%= f.text_area :content, class: 'form-control' %>
+      <label for="comment_content">Content</label>
+      <textarea
+        id="comment_content"
+        class="form-control"
+        data-comment-form-target="textarea"></textarea>
     </div>
-
-    <%= f.submit 'Post Comment', class: 'btn btn-primary' %>
-  <% end %>
+    <button
+      class="btn btn-primary"
+      data-action="click->comment-form#send">Post Comment</button>
+  </div>
 <% end %>

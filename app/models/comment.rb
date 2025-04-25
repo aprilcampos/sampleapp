@@ -4,5 +4,5 @@ class Comment < ApplicationRecord
 
   validates :content, presence: true, length: { minimum: 5, maximimum: 1000 }
   
-  after_create_commit { CommentBroadcastJob.perform_later(self) }
+  broadcasts_to ->(comment) { "blog_#{comment.blog_id}_comments" }, inserts_by: :append
 end
