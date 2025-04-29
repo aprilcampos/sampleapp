@@ -1,5 +1,7 @@
 <div class="album py-5 bg-body-tertiary">
   <div class="container">
+    <%= source_helper("alert alert-warning") %>
+    
     <% if logged_in?(:site_admin) %>
       <div data-controller="sortable" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
     <% else %>
