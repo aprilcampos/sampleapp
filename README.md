@@ -11,14 +11,15 @@ This ongoing Ruby on Rails project portfolio has multiple features like:
 
 Preview:
 
-![image](https://github.com/user-attachments/assets/6f31aba0-b7e9-4d1b-8e31-2063a2f2ef8b)
+![image](https://github.com/user-attachments/assets/fd6dfa0e-1521-4ca0-a128-a5d8587b60ab)
 
-![image](https://github.com/user-attachments/assets/5d104f09-db42-4e66-b9aa-5c3f027315d3)
+![image](https://github.com/user-attachments/assets/a6a01179-4d62-462b-bd90-43c0e9fbfe38)
 
-![image](https://github.com/user-attachments/assets/cf48510e-c529-490c-85e0-1cb3ed573579)
+![image](https://github.com/user-attachments/assets/fead01ae-bb02-4111-894f-bdd8fca9a1f3)
 
-![image](https://github.com/user-attachments/assets/04f8abe6-c72a-4b55-a375-213be769845b)
+![image](https://github.com/user-attachments/assets/8817d6dc-d52e-4ad4-b50a-354027cdf098)
 
+![image](https://github.com/user-attachments/assets/caf63285-676d-4998-a348-908c1ee6e5bc)
 
 
 * Ruby version
