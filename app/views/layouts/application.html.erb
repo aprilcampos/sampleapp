@@ -16,6 +16,9 @@
   </head>
 
   <body>
+
+    <%= render "shared/application_nav" %>
+
     <%= video_tag(
       'HardDrivePhotojpeg.mp4',
       id: 'background',
@@ -30,8 +33,6 @@
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="cover-container">
-
-          <%= render "shared/application_nav" %>
 
           <%= render "shared/alerts" %>
 
