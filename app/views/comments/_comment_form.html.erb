@@ -3,7 +3,7 @@
     data-controller="comment-form"
     data-comment-form-blog-id-value="<%= @blog.id %>">
     <div class="form-group">
-      <label for="comment_content">Content</label>
+      <label for="comment_content">Comment</label>
       <textarea
         id="comment_content"
         class="form-control"
@@ -11,6 +11,6 @@
     </div>
     <button
       class="btn btn-primary"
-      data-action="click->comment-form#send">Post Comment</button>
+      data-action="click->comment-form#send">Add Comment</button>
   </div>
 <% end %>

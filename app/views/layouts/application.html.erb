@@ -7,6 +7,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Slab" rel="stylesheet">
+
     <meta name="keywords" content="<%= @seo_keywords %>" />
     
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -16,6 +18,9 @@
   </head>
 
   <body>
+
+    <%= render "shared/application_nav" %>
+
     <%= video_tag(
       'HardDrivePhotojpeg.mp4',
       id: 'background',
@@ -31,15 +36,11 @@
       <div class="site-wrapper-inner">
         <div class="cover-container">
 
-          <%= render "shared/application_nav" %>
-
           <%= render "shared/alerts" %>
 
           <%= yield %>
 
           <%= render "shared/application_footer" %>
-
-          <%= source_helper("application") %>
 
         </div>
       </div>

@@ -99,3 +99,7 @@ gem 'dotenv-rails', '~> 3.1', '>= 3.1.8'
 gem 'cocoon', '~> 1.2', '>= 1.2.15'
 
 gem 'redis', '~> 5.4'
+
+gem 'redcarpet', '~> 3.3', '>= 3.3.4'
+
+gem 'coderay', '~> 1.1', '>= 1.1.3'

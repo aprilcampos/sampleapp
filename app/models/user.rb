@@ -17,7 +17,7 @@ class User < ApplicationRecord
 
   has_many :comments, dependent: :destroy
 
-  after_create :assign_first_user_as_admin
+  # after_create :assign_first_user_as_admin
 
   def first_name
     self.name.split.first
@@ -27,10 +27,10 @@ class User < ApplicationRecord
     self.name.split.last
   end
 
-  # assign first user as site admin automatically
-  def assign_first_user_as_admin
-    if User.count == 1
-      self.update(role: 'site_admin')
-    end
-  end
+  # # assign first user as site admin automatically
+  # def assign_first_user_as_admin
+  #   if User.count == 1
+  #     self.update(role: 'site_admin')
+  #   end
+  # end
 end
