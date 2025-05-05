@@ -17,23 +17,70 @@ User.create!(
 
 puts "1 regular user created"
 
-3.times do |topic|
-  Topic.create!(
-    title: "Topic #{topic}"
-  )
-end
+# Create specific topics
+topics = [
+  Topic.create!(title: "Ruby on Rails"),
+  Topic.create!(title: "API Integration"),
+  Topic.create!(title: "Software Development")
+]
 
 puts "3 Topics created"
 
-10.times do |blog|
+# Create 2 published blog articles
+
+Blog.create!(
+  title: "Mastering Hotwire in Rails 7: A Beginner's Guide",
+  body: <<~BODY,
+    Hotwire is one of the most exciting additions to the modern Rails stack. Introduced by Basecamp, it allows developers to build fast, interactive web applications without writing much custom JavaScript.
+
+    In this article, we’ll walk through the core concepts of Hotwire, how it integrates with Rails 7, and how you can start using it today to improve the user experience of your application.
+
+    ## What is Hotwire?
+
+    Hotwire stands for **HTML Over The Wire**. Instead of relying on a front-end JavaScript framework like React or Vue, Hotwire sends HTML from the server to update the DOM. It’s composed of:
+    
+    - **Turbo Drive** for navigation
+    - **Turbo Frames** for partial page updates
+    - **Turbo Streams** for real-time broadcasting
+    - **Stimulus** for lightweight JavaScript behavior
+
+  BODY
+  status: :published,
+  topic_id: topics[0].id # Ruby on Rails
+)
+
+Blog.create!(
+  title: "How to Stay Productive as a Remote Software Developer",
+  body: <<~BODY,
+    Working remotely as a software developer offers flexibility but also comes with challenges. Over the past few years, remote work has evolved from a luxury to a necessity.
+
+    Here are a few tips to stay productive:
+
+    1. **Set clear boundaries** between work and personal life.
+    2. **Stick to a routine**—start and end your work at consistent times.
+    3. **Overcommunicate** with your team using tools like Slack, Notion, and Zoom.
+    4. **Stay focused** using techniques like Pomodoro or time blocking.
+
+
+    Embrace remote work, but don’t forget to recharge and socialize offline too!
+  BODY
+  status: :published,
+  topic_id: topics[2].id # Software Development
+)
+
+puts "2 real blog posts created"
+
+# Create 8 draft blogs
+8.times do |i|
   Blog.create!(
-    title: "My Blog Post #{blog}",
-    body: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
-    topic_id: Topic.last.id
+    title: "My Blog Post #{i + 3}",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...",
+    topic_id: topics.sample.id,
+    status: :draft
   )
 end
 
-puts "10 blog posts created"
+puts "8 draft blog posts created"
 
 skills = [
   { title: "Ruby", percent_utilized: 80 },
