@@ -87,7 +87,20 @@ skills = [
   { title: "Ruby on Rails", percent_utilized: 90 },
   { title: "HTML", percent_utilized: 100 },
   { title: "CSS", percent_utilized: 100 },
-  { title: "JavaScript", percent_utilized: 75 }
+  { title: "JavaScript", percent_utilized: 65 },
+  { title: "Stimulus", percent_utilized: 80 },
+  { title: "jQuery", percent_utilized: 80 },
+  { title: "PostgreSQL", percent_utilized: 80 },
+  { title: "MySQL", percent_utilized: 80 },
+  { title: "Bootstrap", percent_utilized: 100 },
+  { title: "TailwindCSS", percent_utilized: 100 },
+  { title: "Zurb Foundation", percent_utilized: 100 },
+  { title: "Linux OS", percent_utilized: 100 },
+  { title: "RSpec", percent_utilized: 35 },
+  { title: "AWS", percent_utilized: 58 },
+  { title: "Git", percent_utilized: 100 },
+  { title: "Github", percent_utilized: 100 },
+  { title: "Gitlab", percent_utilized: 100 }
 ]
 
 skills.each do |skill|
