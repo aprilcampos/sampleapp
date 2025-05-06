@@ -1,15 +1,17 @@
-<div>
+<div class="container">
   <h1 class="mt-5">About Me</h1>
-
   <hr>
+</div>
+
+<div class="container blog-container bg-tranparent">
 
   <div class="mb-4">
-    <div class="row g-4">
-      <div class="col-md-4 me-md-4">
-        <%= image_tag "profile.jpg", height: 400, width: 300, alt: "profile image" %>
+    <div class="row gy-3">
+      <div class="col-md-5 text-center">
+        <%= image_tag "profile.jpg", class: "img-fluid", alt: "profile image" %>
       </div>
     
-      <div class="col-md-7 ps-md-3 text-start">
+      <div class="col-md-7 text-start">
         <p>I am a Full-Stack Developer with a strong focus on Ruby on Rails and a passion for crafting scalable, high-performance web applications.</p>
     
         <p>With experience across full-stack software development, I specialize in Ruby and the Ruby on Rails framework, along with expertise in JavaScript, jQuery, PHP, and WordPress development.</p>
@@ -29,24 +31,31 @@
 
     <hr>
 
-    <div class="skills">
-      <% @skills.each do |skill| %>
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h4 class="mb-0"><%= skill.title %></h4>
-          <div class="progress w-75">
-            <div
-              class="progress-bar progress-bar-striped progress-bar-bg"
-              role="progressbar"
-              aria-valuenow="<%= skill.percent_utilized %>"
-              aria-valuemin="0"
-              aria-valuemax="100"
-              style="width: <%= skill.percent_utilized %>%"
-            >
-              <%= skill.percent_utilized %>%
-            </div>
+    <div class="container">
+      <div class="row">
+        <% @skills.each_slice((@skills.size / 2.0).ceil) do |skills_column| %>
+          <div class="col-md-6">
+            <% skills_column.each do |skill| %>
+              <div class="d-flex justify-content-between align-items-center gap-3 mb-3">
+                <h4 class="mb-0 text-start"><%= skill.title %></h4>
+                <div class="progress w-75">
+                  <div
+                    class="progress-bar progress-bar-striped progress-bar-bg"
+                    role="progressbar"
+                    aria-valuenow="<%= skill.percent_utilized %>"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    style="width: <%= skill.percent_utilized %>%"
+                  >
+                  </div>
+                </div>
+              </div>
+            <% end %>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
+
+
   </div>
 </div>
