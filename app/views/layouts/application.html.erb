@@ -18,8 +18,16 @@
   </head>
 
   <body>
+    
+    <!-- Nav menu for large -->
+    <div class="d-none d-lg-flex">
+      <%= render "shared/application_nav" %>
+    </div>
 
-    <%= render "shared/application_nav" %>
+    <!-- Nav menu for small/medium -->
+    <div class="d-lg-none">
+      <%= render "shared/mobile_application_nav" %>
+    </div>
 
     <%= video_tag(
       'HardDrivePhotojpeg.mp4',
