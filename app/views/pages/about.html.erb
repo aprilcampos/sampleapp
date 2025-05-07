@@ -1,14 +1,14 @@
-<div class="container">
-  <h1 class="mt-5">About Me</h1>
+<div>
+  <h1 class="mt-4 mt-lg-5">About Me</h1>
   <hr>
 </div>
 
-<div class="container blog-container bg-tranparent">
+<div class="blog-container bg-tranparent">
 
   <div class="mb-4">
     <div class="row gy-3">
       <div class="col-md-5 text-center">
-        <%= image_tag "profile.jpg", class: "img-fluid", alt: "profile image" %>
+        <%= image_tag "profile.jpg", class: "img-fluid", alt: "profile image", width: 350, height: 350 %>
       </div>
     
       <div class="col-md-7 text-start">
@@ -30,32 +30,29 @@
     <h1>Technical Skills</h1>
 
     <hr>
-
-    <div class="container">
-      <div class="row">
-        <% @skills.each_slice((@skills.size / 2.0).ceil) do |skills_column| %>
-          <div class="col-md-6">
-            <% skills_column.each do |skill| %>
-              <div class="d-flex justify-content-between align-items-center gap-3 mb-3">
-                <h4 class="mb-0 text-start"><%= skill.title %></h4>
-                <div class="progress w-75">
-                  <div
-                    class="progress-bar progress-bar-striped progress-bar-bg"
-                    role="progressbar"
-                    aria-valuenow="<%= skill.percent_utilized %>"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                    style="width: <%= skill.percent_utilized %>%"
-                  >
-                  </div>
+   
+    <div class="row">
+      <% @skills.each_slice((@skills.size / 2.0).ceil) do |skills_column| %>
+        <div class="col-md-6">
+          <% skills_column.each do |skill| %>
+            <div class="d-flex justify-content-between align-items-center gap-3 mb-3">
+              <h4 class="mb-0 text-start"><%= skill.title %></h4>
+              <div class="progress w-75">
+                <div
+                  class="progress-bar progress-bar-striped progress-bar-bg"
+                  role="progressbar"
+                  aria-valuenow="<%= skill.percent_utilized %>"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  style="width: <%= skill.percent_utilized %>%"
+                >
                 </div>
               </div>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
     </div>
-
 
   </div>
 </div>
