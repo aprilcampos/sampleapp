@@ -1,22 +1,24 @@
-<div class="py-5">
-  <h1 class="mt-5">About Me</h1>
-
+<div>
+  <h1 class="mt-4 mt-lg-5">About Me</h1>
   <hr>
+</div>
+
+<div class="custom-wrapper bg-tranparent">
 
   <div class="mb-4">
-    <div class="row g-4">
-      <div class="col-md-4 me-md-4">
-        <%= image_tag "profile.jpg", height: 400, width: 300, alt: "profile image" %>
+    <div class="row gy-3">
+      <div class="col-md-5 text-center">
+        <%= image_tag "profile.jpg", class: "img-fluid", alt: "profile image", width: 350, height: 350 %>
       </div>
     
-      <div class="col-md-7 ps-md-3 text-start">
-        <p>I am a Full-Stack Developer with a strong focus on Ruby on Rails and a passion for crafting scalable, high-performance web applications.</p>
+      <div class="col-md-7 text-start">
+        <p class="lead">I am a Full-Stack Developer with a strong focus on Ruby on Rails and a passion for crafting scalable, high-performance web applications.</p>
     
-        <p>With experience across full-stack software development, I specialize in Ruby and the Ruby on Rails framework, along with expertise in JavaScript, jQuery, PHP, and WordPress development.</p>
+        <p class="lead">With experience across full-stack software development, I specialize in Ruby and the Ruby on Rails framework, along with expertise in JavaScript, jQuery, PHP, and WordPress development.</p>
     
-        <p>My technical stack also includes RSpec for testing, frontend frameworks like Tailwind, Bootstrap, and Foundation, and database management with PostgreSQL and MySQL. I also work with AWS services such as S3 for cloud storage and IAM for secure access management. Additionally, I have a well-rounded understanding of Linux administration, ensuring smooth deployment and maintenance of applications.</p>
+        <p class="lead">My technical stack also includes RSpec for testing, frontend frameworks like Tailwind, Bootstrap, and Foundation, and database management with PostgreSQL and MySQL. I also work with AWS services such as S3 for cloud storage and IAM for secure access management. Additionally, I have a well-rounded understanding of Linux administration, ensuring smooth deployment and maintenance of applications.</p>
     
-        <p>I take a collaborative and transparent approach to development, prioritizing clear communication and well-structured design patterns. When working on a project, I not only build applications to meet client specifications but also provide regular updates to ensure alignment with their vision.</p>
+        <p class="lead">I take a collaborative and transparent approach to development, prioritizing clear communication and well-structured design patterns. When working on a project, I not only build applications to meet client specifications but also provide regular updates to ensure alignment with their vision.</p>
     
       </div>
     </div>
@@ -28,25 +30,29 @@
     <h1>Technical Skills</h1>
 
     <hr>
-
-    <div class="skills">
-      <% @skills.each do |skill| %>
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h4 class="mb-0"><%= skill.title %></h4>
-          <div class="progress w-75">
-            <div
-              class="progress-bar progress-bar-striped progress-bar-bg"
-              role="progressbar"
-              aria-valuenow="<%= skill.percent_utilized %>"
-              aria-valuemin="0"
-              aria-valuemax="100"
-              style="width: <%= skill.percent_utilized %>%"
-            >
-              <%= skill.percent_utilized %>%
+   
+    <div class="row">
+      <% @skills.each_slice((@skills.size / 2.0).ceil) do |skills_column| %>
+        <div class="col-md-6">
+          <% skills_column.each do |skill| %>
+            <div class="d-flex justify-content-between align-items-center gap-3 mb-3">
+              <h4 class="mb-0 text-start"><%= skill.title %></h4>
+              <div class="progress w-75">
+                <div
+                  class="progress-bar progress-bar-striped progress-bar-bg"
+                  role="progressbar"
+                  aria-valuenow="<%= skill.percent_utilized %>"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  style="width: <%= skill.percent_utilized %>%"
+                >
+                </div>
+              </div>
             </div>
-          </div>
+          <% end %>
         </div>
       <% end %>
     </div>
+
   </div>
 </div>

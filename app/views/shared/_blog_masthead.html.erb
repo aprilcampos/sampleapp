@@ -1,12 +1,4 @@
-<div class="blog-header">
-  <div class="container">
-    <h1 class="blog-title">My Blog</h1>
-    <p class="lead blog-description">An example blog template built with Bootstrap.</p>
-    <span>
-      <%= link_to 'Write a New Blog', new_blog_path if logged_in?(:site_admin) %>
-    </span>
-    <span>
-      <%= link_to "Topics", topics_path %>
-    </span>
-  </div>
+<div class="d-flex justify-content-start gap-2">
+  <%= link_to 'Write a New Blog', new_blog_path, class: 'btn btn-sm btn-secondary bg-white' if logged_in?(:site_admin)%>
+  <%= link_to 'See All Topics', topics_path, class: 'btn btn-sm btn-secondary bg-white' %>
 </div>

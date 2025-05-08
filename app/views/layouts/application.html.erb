@@ -18,8 +18,16 @@
   </head>
 
   <body>
+    
+    <!-- Nav menu for large -->
+    <div class="d-none d-lg-flex">
+      <%= render "shared/application_nav" %>
+    </div>
 
-    <%= render "shared/application_nav" %>
+    <!-- Nav menu for small/medium -->
+    <div class="d-lg-none">
+      <%= render "shared/mobile_application_nav" %>
+    </div>
 
     <%= video_tag(
       'HardDrivePhotojpeg.mp4',
@@ -32,18 +40,14 @@
 
     <div class="video-overlay"></div>
 
-    <div class="site-wrapper">
-      <div class="site-wrapper-inner">
-        <div class="cover-container">
+    <div class="container">
 
-          <%= render "shared/alerts" %>
+      <%= render "shared/alerts" %>
 
-          <%= yield %>
+      <%= yield %>
 
-          <%= render "shared/application_footer" %>
-
-        </div>
-      </div>
+      <%= render "shared/application_footer" %>
+        
     </div>
   </body>
 </html>

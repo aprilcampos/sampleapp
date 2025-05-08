@@ -1,24 +1,41 @@
-<div class="col-sm-3 offset-sm-1 blog-sidebar">
-  <div class="sidebar-module sidebar-module-inset">
-    <h4>About</h4>
-    <p>A space where I document my journey in web development, share tutorials, and explore new technologies.</p>
+<div class="blog-sidebar d-grid gap-3">
+  
+  <div class="card sidebar-card">
+    <div class="card-body d-flex flex-column justify-content-center">
+      <h4 class="card-title">About</h4>
+      <p class="card-text">A space where I document my journey in web development, share tutorials, and explore new technologies.</p>
+    </div>
   </div>
   
-  <div class="sidebar-module">
-    <h4>Topics</h4>
-    <% @side_bar_topics.each do |topic| %>
-      <p><%= link_to topic.title, topic_path(topic) %></p>
-    <% end %>
+  <div class="card sidebar-card">
+    <div class="card-body d-flex flex-column justify-content-center">
+      <h4 class="card-title">Topics</h4>
+      <% @side_bar_topics.each do |topic| %>
+        <p><%= link_to topic.title, topic_path(topic), class: "text-light-black" %></p>
+      <% end %>
+    </div>
   </div>
 
-  <%= source_helper("alert alert-info blog-sidebar-source") %>
-
-  <div class="sidebar-module">
-    <h4>Elsewhere</h4>
-    <ol class="list-unstyled social-links">
-       <li><a href="https://github.com/aprilcampos" target="_blank" ><%= fa_icon "github" %></a></li>
-       <li><a href="https://www.instagram.com/aprlcamlle" target="_blank" ><%= fa_icon "instagram" %></a></li>
-       <li><a href="https://www.facebook.com/aprilcamillecampos" target="_blank" ><%= fa_icon "facebook" %></a></li>
-     </ol>
+  <div class="card sidebar-card">
+    <div class="card-body d-flex flex-column justify-content-center">
+      <h4 class="card-title">Elsewhere</h4>
+      <div class="d-flex justify-content-center gap-3 p-0 m-0">
+        <span>
+          <a href="https://github.com/aprilcampos" target="_blank" class="social-icon">
+            <%= fa_icon "github" %>
+          </a>
+        </span>
+        <span>
+          <a href="https://www.instagram.com/aprlcamlle" target="_blank" class="social-icon">
+            <%= fa_icon "instagram" %>
+          </a>
+        </span>
+        <span>
+          <a href="https://www.facebook.com/aprilcamillecampos" target="_blank" class="social-icon">
+            <%= fa_icon "facebook" %>
+          </a>
+        </span>
+      </div>
+    </div>
   </div>
 </div>
