@@ -3,8 +3,8 @@
     <%= link_to blog.title.upcase, blog, class: "text-light-black" %>
   </h2>
 
-  <p>Published <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago</p>
-  
+  <p class="published-text">Published <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago</p>
+
   <%= render partial: 'blogs/admin_actions', locals: { blog: blog } %>
 
   <p class="text-start">

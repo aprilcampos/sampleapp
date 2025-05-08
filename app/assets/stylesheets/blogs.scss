@@ -19,20 +19,35 @@
 }
 
 // Blog sidebar
-.custom-card {
+.sidebar-card {
   min-height: 250px;
 }
 
-.custom-card .card-body {
+.sidebar-card .card-body {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 @media (max-width: 768px) {
-  .custom-card {
-    min-height: auto; /* Let the height adjust based on content */
+  .sidebar-card {
+    min-height: auto;
   }
+}
+
+.sidebar-card {
+  .social-icon {
+    font-size: 1.5em;
+    color: #333 !important;
+  }
+}
+
+
+//
+.published-text {
+  font-style: italic;
+  font-size: 0.85rem;
+  color: #555;
 }
 
 
