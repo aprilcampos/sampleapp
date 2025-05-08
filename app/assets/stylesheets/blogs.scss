@@ -1,9 +1,38 @@
+/* Breadcrumbs */
 .blogcrumb a {
   font-size: 1.50em;
-  margin: 0px 10px 0px 10px;
 }
 .breadcrumb-item + .breadcrumb-item::before {
   color: #fff !important;
+}
+
+/* Container */
+.blog-container {
+  border: 1px solid white;
+  padding: .5rem;
+}
+
+@media (min-width: 992px) {
+  .blog-container {
+    padding: 2rem;
+  }
+}
+
+// Blog sidebar
+.custom-card {
+  min-height: 250px;
+}
+
+.custom-card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .custom-card {
+    min-height: auto; /* Let the height adjust based on content */
+  }
 }
 
 
