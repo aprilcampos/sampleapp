@@ -1,26 +1,26 @@
-<div class="container">
-  <h1 class="mt-5">My Blog</h1>
+<div>
+  <h1 class="mt-4 mt-lg-5">My Blog</h1>
   <hr>
 </div>
 
-<div class="container blog-container bg-tranparent">
+<div class="blog-container bg-tranparent">
   <%= render "shared/blog_masthead" %>
 
-  <div class="mt-4">
-    <div class="row">
-      <div class="col-md-8">
-        <div class="blog-main">
-          <%= paginate @blogs %>
-
-          <%= render @blogs %>
-
-          <%= paginate @blogs %>
-        </div>
+  <div class="row mt-4">
+    
+    <div class="col-md-8">
+      <div class="d-flex flex-column gap-3">
+        <%= render @blogs %>
       </div>
 
-      <div class="col-md-4">
+      <%= paginate @blogs %>
+    </div>
+
+    <div class="col-md-4">
+      <div class="<%= logged_in?(:site_admin) ? '' : 'mt-3 mt-md-0' %>">
         <%= render "shared/blog_sidebar" %>
       </div>
     </div>
+
   </div>
 </div>
