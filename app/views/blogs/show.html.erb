@@ -1,43 +1,46 @@
-<div class="container">
+<div>
   <h1 class="mt-4 mt-lg-5"><%= @blog.title %></h1>
   <hr>
 </div>
 
-<div class="container blog-container bg-tranparent">
-  <div class="mt-4">
-    <div class="row">
+<div class="blog-container bg-tranparent">
+  <div class="row">
 
-      <div class="col-sm-8">
-        <div class="blog-main">
+    <div class="col-sm-8">
+      <nav class="breadcrumb">
+        <%= link_to "Home", root_path, class: 'breadcrumb-item' %>
+        <%= link_to @blog.topic.title, topic_path(@blog.topic), class: 'breadcrumb-item' %>
 
-          <nav class="breadcrumb">
-            <%= link_to "Home", root_path, class: 'breadcrumb-item' %>
-            <%= link_to @blog.topic.title, topic_path(@blog.topic), class: 'breadcrumb-item' %>
+        <span class="breadcrumb-item active text-white"><%= @blog.title %></span>
+      </nav>
 
-            <span class="breadcrumb-item active text-white"><%= @blog.title %></span>
-
-          </nav>
-
-          <%= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin) %>
-
-          <p>
-            <%= markdown @blog.body %>
-          </p>
-
-          <%= render 'comments/comment_form' %>
-
-          <div id="comments" data-blog-id="<%= @blog.id %>">
-            <%= render @blog.comments %>
-          </div>
-
-          <%= turbo_stream_from "blog_#{@blog.id}_comments" %>
+      <% if logged_in?(:site_admin) %>
+        <div class="d-flex justify-content-start mb-3">
+          <%= link_to 'Edit', edit_blog_path(@blog), class: 'btn btn-sm btn-secondary bg-white' if logged_in?(:site_admin) %>
         </div>
-      </div>
+      <% end %>
 
-      <div class="col-md-4">
-        <%= render "shared/blog_sidebar" %>
+      <div class="card text-start px-2 px-lg-3 mb-3">
+        <p>
+          <%= markdown @blog.body %>
+        </p>
+
+        <h2>Comments</h2>
+
+        <%= render 'comments/comment_form' %>
+
+        <div id="comments" class="mb-2" data-blog-id="<%= @blog.id %>">
+          <%= render @blog.comments %>
+        </div>
+
+        <%= turbo_stream_from "blog_#{@blog.id}_comments" %>
       </div>
       
     </div>
+
+    <div class="col-md-4">
+      <%= render "shared/blog_sidebar" %>
+    </div>
+    
   </div>
 </div>

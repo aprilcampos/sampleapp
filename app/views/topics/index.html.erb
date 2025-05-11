@@ -6,18 +6,12 @@
 <div class="blog-container bg-tranparent">
 
   <div class="row">
-    
     <div class="col-md-8">
-      <div class="">
-        <%= render @topics %>
-      </div>
+      <%= render @topics %>
     </div>
 
     <div class="col-md-4">
-      <div class="<%= logged_in?(:site_admin) ? '' : 'mt-3 mt-md-0' %>">
-        <%= render "shared/blog_sidebar" %>
-      </div>
+      <%= render "shared/blog_sidebar" %>
     </div>
-
   </div>
 </div>

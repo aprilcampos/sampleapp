@@ -4,21 +4,19 @@
 </div>
 
 <div class="container blog-container bg-tranparent">
-  <div class="mt-4">
-    <div class="row">
-      <div class="col-md-8">
-        <div class="blog-main">
-          <%= paginate @blogs %>
-  
-          <%= render @blogs %>
+  <div class="row">
+    <div class="col-md-8 mb-3 mb-md-0">
+      
+      <%= paginate @blogs %>
 
-          <%= paginate @blogs %>
-        </div>
-      </div>
+      <%= render @blogs %>
 
-      <div class="col-md-4">
-        <%= render "shared/blog_sidebar" %>
-      </div>
+      <%= paginate @blogs %>
+    
+    </div>
+
+    <div class="col-md-4">
+      <%= render "shared/blog_sidebar" %>
     </div>
   </div>
 </div>
