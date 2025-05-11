@@ -5,18 +5,20 @@
 
 <div class="container blog-container bg-tranparent">
   <div class="row">
-    <div class="col-md-8 mb-3 mb-md-0">
-      
-      <%= paginate @blogs %>
+    <div class="col-md-8">
+      <div class="d-flex flex-column gap-3">
+        <%= paginate @blogs %>
 
-      <%= render @blogs %>
+        <%= render @blogs %>
 
-      <%= paginate @blogs %>
-    
+        <%= paginate @blogs %>
+      </div>
     </div>
 
     <div class="col-md-4">
-      <%= render "shared/blog_sidebar" %>
+      <div class="<%= logged_in?(:site_admin) ? '' : 'mt-3 mt-md-0' %>">
+        <%= render "shared/blog_sidebar" %>
+      </div>
     </div>
   </div>
 </div>
