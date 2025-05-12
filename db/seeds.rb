@@ -1,3 +1,16 @@
+# Destroy existing records in dependent order
+Technology.destroy_all
+Portfolio.destroy_all
+Skill.destroy_all
+Blog.destroy_all
+Topic.destroy_all
+
+# Reset primary key sequences (PostgreSQL-specific)
+tables = %w[technologies portfolios skills blogs topics users]
+tables.each do |t|
+  ActiveRecord::Base.connection.reset_pk_sequence!(t)
+end
+
 User.find_or_create_by!(email: "admin@test.com") do |user|
   user.password = "123456"
   user.password_confirmation = "123456"

@@ -25,7 +25,9 @@
           <%= markdown @blog.body %>
         </p>
 
-        <h2>Comments</h2>
+        <% if logged_in?(:site_admin) %>
+          <h2>Comments</h2>
+        <% end %>
 
         <%= render 'comments/comment_form' %>
 
