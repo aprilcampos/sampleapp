@@ -1,19 +1,17 @@
-User.create!(
-  email: "admin@test.com",
-  password: "123456",
-  password_confirmation: "123456",
-  name: "Admin User",
-  roles: "site_admin"
-)
+User.find_or_create_by!(email: "admin@test.com") do |user|
+  user.password = "123456"
+  user.password_confirmation = "123456"
+  user.name = "Admin User"
+  user.roles = "site_admin"
+end
 
 puts "1 Admin user created"
 
-User.create!(
-  email: "reg@test.com",
-  password: "123456",
-  password_confirmation: "123456",
-  name: "Regular User",
-)
+User.find_or_create_by!(email: "reg@test.com") do |user|
+  user.password = "123456"
+  user.password_confirmation = "123456"
+  user.name = "Regular User"
+end
 
 puts "1 regular user created"
 
