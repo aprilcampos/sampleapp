@@ -1,17 +1,18 @@
-<div class="album py-5 bg-body-tertiary">
-  <div class="container">
-    <%= source_helper("alert alert-warning") %>
-    
-    <% if logged_in?(:site_admin) %>
-      <div data-controller="sortable" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-    <% else %>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+<div>
+  <h1 class="mt-4 mt-lg-5">Portfolio Items</h1>
+  <hr>
+</div>
+
+<div class="blog-container bg-tranparent">
+  <%= source_helper("alert alert-warning") %>
+
+  <%= tag.div class: "row gy-4", data: (logged_in?(:site_admin) ? { controller: "sortable" } : {}) do %>
+    <% @portfolio_items.each do |portfolio_item| %>
+      <div class="col-md-4">
+        <div data-id="<%= portfolio_item.id %>">
+          <%= render partial: 'portfolio_item', locals: { portfolio_item: portfolio_item } %>
+        </div>
+      </div>
     <% end %>
-        <% @portfolio_items.each do |portfolio_item| %>
-          <div data-id="<%= portfolio_item.id %>">
-            <%= render partial: 'portfolio_item', locals: { portfolio_item: portfolio_item } %>
-          </div>
-        <% end %>
-      </div> <!-- close row -->
-  </div>
+  <% end %>
 </div>
