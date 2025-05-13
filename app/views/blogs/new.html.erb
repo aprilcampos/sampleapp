@@ -1,7 +1,24 @@
-<div class="col-sm-8 blog-main">
-  <h1>New Blog</h1>
+<div>
+  <h1 class="mt-4 mt-lg-5">New Blog</h1>
+  <hr>
+</div>
 
-  <%= render 'form', blog: @blog %>
+<div class="blog-container bg-tranparent">
 
-  <%= link_to 'Back', blogs_path %>
+  <div class="row">
+    
+    <div class="col-md-8">
+      <div class="d-flex flex-column gap-3">
+        <%= render 'form', blog: @blog %>
+      </div>
+
+    </div>
+
+    <div class="col-md-4">
+      <div class="<%= logged_in?(:site_admin) ? '' : 'mt-3 mt-md-0' %>">
+        <%= render "shared/blog_sidebar" %>
+      </div>
+    </div>
+
+  </div>
 </div>
