@@ -1,0 +1,19 @@
+{
+  "name": "app",
+  "private": true,
+  "devDependencies": {
+    "esbuild": "^0.25.4"
+  },
+  "scripts": {
+    "build": "esbuild app/javascript/*.* --bundle --minify --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets"
+  },
+  "dependencies": {
+    "@hotwired/stimulus": "^3.2.2",
+    "@hotwired/turbo-rails": "^8.0.13",
+    "@popperjs/core": "^2.11.8",
+    "@rails/actioncable": "^8.0.200",
+    "bootstrap": "^5.3.6",
+    "jquery": "^3.7.1",
+    "sortablejs": "^1.15.6"
+  }
+}
