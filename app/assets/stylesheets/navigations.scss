@@ -1,0 +1,7 @@
+.collapse {
+  transition: height 0.3s ease-in-out;
+}
+
+.collapse.show {
+  display: block;
+}
