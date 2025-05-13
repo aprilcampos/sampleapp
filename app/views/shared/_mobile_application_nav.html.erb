@@ -1,23 +1,17 @@
-<div class="text-white w-100 sticky-top" data-controller="hamburger">
-  <div class="navbar-bg w-100">
-    <div class="container d-flex justify-content-between align-items-center py-2">
+<div class="navbar-bg w-100">
+  <div class="inner container d-flex flex-column">
+    <div class="d-flex justify-content-between align-items-center w-100">
       <h3 class="masthead-brand m-0 text-white">April Campos</h3>
-      <button class="btn text-white d-lg-none" type="button"
-              data-bs-toggle="collapse" data-bs-target="#mobileNavbar"
-              aria-controls="mobileNavbar" aria-expanded="false" aria-label="Toggle navigation"
-              data-action="click->hamburger#toggleIcons">
-        <i class="fa fa-bars" data-hamburger-target="hamburgerIcon"></i>
-        <i class="fa fa-times d-none" data-hamburger-target="closeIcon"></i>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa fa-bars"></i>
       </button>
     </div>
 
-    <div class="collapse" id="mobileNavbar">
-      <div class="container px-3">
-        <nav class="nav flex-column align-items-start">
-          <%= nav_helper 'nav-link text-white px-0 mx-0', 'span' %>
-          <%= login_helper 'nav-link text-white px-0 mx-0' %>
-        </nav>
-      </div>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <nav class="nav flex-column align-items-start mt-3">
+        <%= nav_helper 'nav-link text-white px-0 mx-0', 'span' %>
+        <%= login_helper 'nav-link text-white px-0 mx-0' %>
+      </nav>
     </div>
   </div>
 </div>
