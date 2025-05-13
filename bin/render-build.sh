@@ -3,7 +3,9 @@
 set -o errexit
 
 bundle install
+bundle exec rails importmap:install
 bundle exec rails assets:precompile RAILS_ENV=production
+cat public/assets/importmap.json
 bundle exec rails assets:clean
 
 # If you're using a Free instance type, you need to
