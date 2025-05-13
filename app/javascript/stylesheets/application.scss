@@ -1,9 +1,11 @@
-@import "bootstrap";
-@import "font-awesome";
+// Load npm packages via node_modules (at the top)
+@use 'bootstrap/scss/bootstrap';
+@use 'font-awesome/scss/font-awesome';
 
-@import 'blogs';
-@import 'navigations';
-@import 'portfolios';
+@use 'blogs';
+@use 'navigations';
+@use 'portfolios';
+
 
 /*
  * Globals
