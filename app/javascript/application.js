@@ -8,4 +8,4 @@ import consumer from "./channels/consumer"
 window.consumer = consumer
 
 import "bootstrap"
-import "cocoon"
+import "@popperjs/core"
