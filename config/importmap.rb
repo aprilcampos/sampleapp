@@ -6,6 +6,7 @@ pin "@hotwired/stimulus", to: "stimulus.min.js", preload: true
 pin "@hotwired/stimulus-loading", to: "stimulus-loading.js", preload: true
 
 pin "controllers", to: "controllers/index.js"
+pin "controllers/sortable_controller", to: "controllers/sortable_controller.js", preload: true
 pin_all_from "app/javascript/controllers", under: "controllers"
 pin_all_from "app/javascript/channels", under: "channels"
 pin "@rails/actioncable", to: "actioncable.esm.js"

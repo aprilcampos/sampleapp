@@ -5,6 +5,7 @@
     "@hotwired/stimulus": "/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js",
     "@hotwired/stimulus-loading": "/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js",
     "controllers": "/assets/controllers/index-82074d61de6560b8e0c58bc6ba944756346eb5e6a04144164a8d51457d33bba5.js",
+    "controllers/sortable_controller": "/assets/controllers/sortable_controller-12811018e77fe398ae9a97b6864b298efe45f01749bc3cae2c7bc9c3985c1309.js",
     "@rails/actioncable": "/assets/actioncable.esm-e01089c3ec4fe7817fa9abcad06cab6bdc387f95f0ca6aab4bf7ba7537f70690.js",
     "bootstrap": "https://ga.jspm.io/npm:bootstrap@5.3.3/dist/js/bootstrap.esm.js",
     "@popperjs/core": "https://ga.jspm.io/npm:@popperjs/core@2.11.8/lib/index.js",
@@ -17,7 +18,6 @@
     "controllers/flash_controller": "/assets/controllers/flash_controller-1b6611c8ea53698edf359f7e51a33ca5e36c5e2346e32267101322c8ad727fc3.js",
     "controllers/hamburger_controller": "/assets/controllers/hamburger_controller-04024382391bb910584145d8113cf35ef376b55d125bb4516cebeb14ce788597.js",
     "controllers/hello_controller": "/assets/controllers/hello_controller-a77f33f2d09fe008696ba9981f3161227f2d032b9357f5c387761742fec31757.js",
-    "controllers/sortable_controller": "/assets/controllers/sortable_controller-12811018e77fe398ae9a97b6864b298efe45f01749bc3cae2c7bc9c3985c1309.js",
     "channels/consumer": "/assets/channels/consumer-a0431ce07bd3b26c2e7b49de6f2e319b87e0c50832cc76d0184379b9d0f73351.js",
     "channels": "/assets/channels/index-be9553f2d1aa6948b91b80be54a7305e73b68165889e2746b2538e86890c2c41.js"
   }
