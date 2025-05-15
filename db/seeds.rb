@@ -138,8 +138,8 @@ sampleapp = Portfolio.create!(
         "Real-time comments are implemented using Action Cable (Rails channels), enabling live updates without page reloads. " \
         "The app also includes custom route constraints, a custom Ruby gem made by myself, and file uploads using Active Storage backed by AWS S3 with IAM security. " \
         "The interface is clean and responsive, built with Bootstrap and modern JavaScript enhancements.",
-  main_image: "app/assets/images/portfolio-1.png",
-  thumb_image: "app/assets/images/portfolio-1.png",
+  main_image: File.open(Rails.root.join("app/assets/images/portfolio-1.png")),
+  thumb_image: File.open(Rails.root.join("app/assets/images/portfolio-1.png")),
   position: 1
 )
 
@@ -166,10 +166,10 @@ quote_editor = Portfolio.create!(
   title: "Quote Editor",
   subtitle: "Single-page, Reactive Quote Editor Application built with Ruby on Rails 7 and Turbo",
   body: "This ongoing application is a single-page, reactive quote editor. It was built with Ruby on Rails 7 and Turbo. " \
-        "The application supports real-time updates using Turbo Streams and WebSockets, and exposes a RESTful API for integration. " \
+        "The application supports real-time updates using Turbo Streams, and exposes a RESTful API for integration. " \
         "It features dynamic form handling, live previews, and version tracking for quotes, all without requiring full-page reloads.",
-  main_image: "app/assets/images/portfolio-2.png",
-  thumb_image: "app/assets/images/portfolio-2.png",
+  main_image: File.open(Rails.root.join("app/assets/images/portfolio-2.png")),
+  thumb_image: File.open(Rails.root.join("app/assets/images/portfolio-2.png")),
   position: 2
 )
 
@@ -193,8 +193,8 @@ blog_app = Portfolio.create!(
   body: "This blog application was built as a learning project following the official 'Getting Started with Rails' guide. " \
         "It allows users to create, edit, and delete articles, as well as post comments. The project introduced fundamental " \
         "Rails concepts such as MVC architecture, routing, models, controllers, views, form helpers, validations, and partials.",
-  main_image: "app/assets/images/portfolio-3.png",
-  thumb_image: "app/assets/images/portfolio-3.png",
+  main_image: File.open(Rails.root.join("app/assets/images/portfolio-3.png")),
+  thumb_image: File.open(Rails.root.join("app/assets/images/portfolio-3.png")),
   position: 3
 )
 
@@ -215,8 +215,8 @@ custom_gem = Portfolio.create!(
   body: "This gem (`AccamposViewTool`) was built to encapsulate reusable view-related helpers like copyright rendering. " \
         "It follows RubyGems conventions and is structured with modules and a renderer class. It was used in the portfolio application " \
         "and can be published for broader use.",
-  main_image: "app/assets/images/portfolio-4.png",
-  thumb_image: "app/assets/images/portfolio-4.png",
+  main_image: File.open(Rails.root.join("app/assets/images/portfolio-4.png")),
+  thumb_image: File.open(Rails.root.join("app/assets/images/portfolio-4.png")),
   position: 4
 )
 
@@ -234,8 +234,8 @@ instaclone = Portfolio.create!(
         "which updates followers instantly when someone likes or comments on a post. The design is styled using Bootstrap 5 and Sass, " \
         "and Popper.js is used to enhance interactive UI elements. This project demonstrates real-time interactivity, modern frontend tools, " \
         "and a fully relational database model suitable for scalable social features.",
-  main_image: "app/assets/images/portfolio-5.png",
-  thumb_image: "app/assets/images/portfolio-5.png",
+  main_image: File.open(Rails.root.join("app/assets/images/portfolio-5.png")),
+  thumb_image: File.open(Rails.root.join("app/assets/images/portfolio-5.png")),
   position: 5
 )
 
@@ -258,8 +258,8 @@ bootstrap_site = Portfolio.create!(
   body: "This was my first frontend project, built entirely using HTML, CSS, and Bootstrap 5. It features a clean and responsive layout, " \
         "a sticky navigation bar, interactive components like modals and carousels, and consistent styling using Bootstrap's utility classes. " \
         "Through this project, I learned how to use Bootstrap's grid system, layout utilities, and built-in JavaScript plugins to build a polished and mobile-friendly interface.",
-  main_image: "app/assets/images/portfolio-6.png",
-  thumb_image: "app/assets/images/portfolio-6.png",
+  main_image: File.open(Rails.root.join("app/assets/images/portfolio-6.png")),
+  thumb_image: File.open(Rails.root.join("app/assets/images/portfolio-6.png")),
   position: 6
 )
 
