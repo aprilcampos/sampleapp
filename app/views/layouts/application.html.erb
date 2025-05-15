@@ -29,16 +29,8 @@
       <%= render "shared/mobile_application_nav" %>
     </div>
 
-    <%= video_tag(
-      'HardDrivePhotojpeg.mp4',
-      id: 'background',
-      autoplay: true,
-      loop: true,
-      muted: true,
-      poster: 'home_bg.png'
-    ) %>
-
-    <div class="video-overlay"></div>
+    <%= image_tag 'home_bg.png', id: 'background' %>
+    <div class="image-overlay"></div>
 
     <div class="container">
 
