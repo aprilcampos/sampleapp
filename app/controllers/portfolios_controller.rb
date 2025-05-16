@@ -25,7 +25,7 @@ class PortfoliosController < ApplicationController
   
     respond_to do |format|
       if @portfolio_item.save
-        format.html { redirect_to portfolios_path, notice: 'Your portfolio item is now live.' }
+        format.html { redirect_to portfolios_path, notice: 'Portfolio item is now live.' }
         format.turbo_stream { render turbo_stream: turbo_stream.replace('portfolio_form', partial: 'form', locals: { portfolio_item: @portfolio_item }) }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class PortfoliosController < ApplicationController
   def update
     respond_to do |format|
       if @portfolio_item.update(portfolio_params)
-        format.html { redirect_to portfolios_path, notice: 'The record was successfully updated.' }
+        format.html { redirect_to portfolios_path, notice: 'The portfolio item was successfully updated.' }
         format.turbo_stream do
           render turbo_stream: turbo_stream.replace('portfolio_form', partial: 'form', locals: { portfolio_item: @portfolio_item })
         end
@@ -62,7 +62,7 @@ class PortfoliosController < ApplicationController
 
     #redirect
     respond_to do |format|
-      format.html { redirect_to portfolios_url, notice: 'Record was removed.' }
+      format.html { redirect_to portfolios_url, notice: 'Portfolio was sucessfully removed.' }
     end
   end
 
