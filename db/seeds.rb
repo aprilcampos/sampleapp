@@ -4,6 +4,7 @@ Portfolio.destroy_all
 Skill.destroy_all
 Blog.destroy_all
 Topic.destroy_all
+User.destroy_all
 
 # Reset primary key sequences (PostgreSQL-specific)
 tables = %w[technologies portfolios skills blogs topics users]
@@ -11,7 +12,8 @@ tables.each do |t|
   ActiveRecord::Base.connection.reset_pk_sequence!(t)
 end
 
-User.find_or_create_by!(email: "admin@test.com") do |user|
+# Users - start
+User.find_or_create_by!(email: "admin@example.com") do |user|
   user.password = "123456"
   user.password_confirmation = "123456"
   user.name = "Admin User"
@@ -20,15 +22,16 @@ end
 
 puts "1 Admin user created"
 
-User.find_or_create_by!(email: "reg@test.com") do |user|
+User.find_or_create_by!(email: "user@example.com") do |user|
   user.password = "123456"
   user.password_confirmation = "123456"
   user.name = "Regular User"
 end
 
 puts "1 regular user created"
+# Users - end
 
-# Create specific topics
+# Topics - start
 topics = [
   Topic.create!(title: "Ruby on Rails"),
   Topic.create!(title: "API Integration"),
@@ -36,9 +39,10 @@ topics = [
 ]
 
 puts "3 Topics created"
+# Topics - end
 
+# Blogs - start
 # Create 2 published blog articles
-
 Blog.create!(
   title: "Mastering Hotwire in Rails 7: A Beginner's Guide",
   body: <<~BODY,
@@ -92,7 +96,9 @@ puts "2 real blog posts created"
 end
 
 puts "8 draft blog posts created"
+# Blogs - end
 
+# Skills - start
 skills = [
   { title: "Ruby", percent_utilized: 80 },
   { title: "Ruby on Rails", percent_utilized: 90 },
@@ -119,33 +125,150 @@ skills.each do |skill|
 end
 
 puts "#{Skill.count} skills created"
+# Skills - end
 
-8.times do |portfolio_item|
-  Portfolio.create!(
-    title: "Portfolio title: #{portfolio_item}",
-    subtitle: "Ruby on Rails",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    main_image: "http://placehold.it/600x400",
-    thumb_image: "http://placehold.it/350x200"
-  )
-end
+# Portfolios and Technologies - start
+# Portfolio Website with all advanced features
+sampleapp = Portfolio.create!(
+  title: "Portfolio Website",
+  subtitle: "Full-featured Rails Application with Authentication, Authorization, Real-time Features, and AWS Integration",
+  body: "This ongoing Ruby on Rails portfolio project includes several advanced features beyond basic CRUD. " \
+        "It features full user authentication (sign up, log in, log out) using Devise and role-based authorization. " \
+        "Portfolios and blog entries can be created, updated, and deleted, with drag-and-drop reordering powered by Stimulus and Sortable.js. " \
+        "Real-time comments are implemented using Action Cable (Rails channels), enabling live updates without page reloads. " \
+        "The app also includes custom route constraints, a custom Ruby gem made by myself, and file uploads using Active Storage backed by AWS S3 with IAM security. " \
+        "The interface is clean and responsive, built with Bootstrap and modern JavaScript enhancements.",
+  main_image: File.open(Rails.root.join("app/assets/images/portfolio-1.png")),
+  thumb_image: File.open(Rails.root.join("app/assets/images/portfolio-1.png")),
+  position: 1
+)
 
-1.times do |portfolio_item|
-  Portfolio.create!(
-    title: "Portfolio title: #{portfolio_item}",
-    subtitle: "Angular",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    main_image: "http://placehold.it/600x400",
-    thumb_image: "http://placehold.it/350x200"
-  )
-end
+sampleapp.technologies.create!([
+  { name: "HTML" },
+  { name: "CSS" },
+  { name: "JavaScript" },
+  { name: "Ruby" },
+  { name: "Ruby on Rails 7" },
+  { name: "RESTful API" },
+  { name: "Action Cable" },
+  { name: "Turbo (Hotwire)" },
+  { name: "Stimulus" },
+  { name: "Sortable.js" },
+  { name: "Devise" },
+  { name: "AWS S3 + IAM" },
+  { name: "Custom Ruby Gem" },
+  { name: "PostgreSQL" },
+  { name: "Bootstrap" }
+])
 
-puts "9 portfolio items created"
+# Quote Editor
+quote_editor = Portfolio.create!(
+  title: "Quote Editor",
+  subtitle: "Single-page, Reactive Quote Editor Application built with Ruby on Rails 7 and Turbo",
+  body: "This ongoing application is a single-page, reactive quote editor. It was built with Ruby on Rails 7 and Turbo. " \
+        "The application supports real-time updates using Turbo Streams, and exposes a RESTful API for integration. " \
+        "It features dynamic form handling, live previews, and version tracking for quotes, all without requiring full-page reloads.",
+  main_image: File.open(Rails.root.join("app/assets/images/portfolio-2.png")),
+  thumb_image: File.open(Rails.root.join("app/assets/images/portfolio-2.png")),
+  position: 2
+)
 
-3.times do |technology|
-  Portfolio.last.technologies.create!(
-    name: "Technology #{technology}"
-  )
-end
+quote_editor.technologies.create!([
+  { name: "HTML" },
+  { name: "CSS" },
+  { name: "JavaScript" },
+  { name: "Ruby" },
+  { name: "Ruby on Rails 7" },
+  { name: "Hotwire (Turbo + Stimulus)" },
+  { name: "SCSS" },
+  { name: "WebSockets" },
+  { name: "PostgreSQL" },
+  { name: "RESTful API" }
+])
 
-puts "3 technologies created"
+# Simple Blog
+blog_app = Portfolio.create!(
+  title: "Simple Blog",
+  subtitle: "Beginner-friendly Blog Application built by following Rails Guides",
+  body: "This blog application was built as a learning project following the official 'Getting Started with Rails' guide. " \
+        "It allows users to create, edit, and delete articles, as well as post comments. The project introduced fundamental " \
+        "Rails concepts such as MVC architecture, routing, models, controllers, views, form helpers, validations, and partials.",
+  main_image: File.open(Rails.root.join("app/assets/images/portfolio-3.png")),
+  thumb_image: File.open(Rails.root.join("app/assets/images/portfolio-3.png")),
+  position: 3
+)
+
+blog_app.technologies.create!([
+  { name: "HTML" },
+  { name: "CSS" },
+  { name: "Ruby" },
+  { name: "Ruby on Rails" },
+  { name: "SQLite3" },
+  { name: "ERB" },
+  { name: "RESTful API" }
+])
+
+# Custom Gem
+custom_gem = Portfolio.create!(
+  title: "Custom Ruby Gem",
+  subtitle: "Ruby Gem: AccamposViewTool for Reusable View Helpers",
+  body: "This gem (`AccamposViewTool`) was built to encapsulate reusable view-related helpers like copyright rendering. " \
+        "It follows RubyGems conventions and is structured with modules and a renderer class. It was used in the portfolio application " \
+        "and can be published for broader use.",
+  main_image: File.open(Rails.root.join("app/assets/images/portfolio-4.png")),
+  thumb_image: File.open(Rails.root.join("app/assets/images/portfolio-4.png")),
+  position: 4
+)
+
+custom_gem.technologies.create!([
+  { name: "Ruby" },
+  { name: "AccamposViewTool (Custom Gem)" }
+])
+
+# Instagram Clone
+instaclone = Portfolio.create!(
+  title: "Instagram Clone",
+  subtitle: "Social Media App with Real-time Features Built in Ruby on Rails 7",
+  body: "This Instagram-style social media application is built using Ruby on Rails 7, PostgreSQL, and Hotwire (Turbo & Stimulus). " \
+        "Users can create posts, follow others, and interact in real time. It includes a live notifications system powered by Action Cable, " \
+        "which updates followers instantly when someone likes or comments on a post. The design is styled using Bootstrap 5 and Sass, " \
+        "and Popper.js is used to enhance interactive UI elements. This project demonstrates real-time interactivity, modern frontend tools, " \
+        "and a fully relational database model suitable for scalable social features.",
+  main_image: File.open(Rails.root.join("app/assets/images/portfolio-5.png")),
+  thumb_image: File.open(Rails.root.join("app/assets/images/portfolio-5.png")),
+  position: 5
+)
+
+instaclone.technologies.create!([
+  { name: "Ruby on Rails 7" },
+  { name: "Turbo" },
+  { name: "Stimulus" },
+  { name: "Action Cable" },
+  { name: "Bootstrap" },
+  { name: "Sass" },
+  { name: "Popper.js" },
+  { name: "PostgreSQL" },
+  { name: "Real-time Notifications" }
+])
+
+# Bootstrap Frontend Site
+bootstrap_site = Portfolio.create!(
+  title: "Front-End Website",
+  subtitle: "My First Responsive Website Built with HTML, CSS, and Bootstrap 5",
+  body: "This was my first frontend project, built entirely using HTML, CSS, and Bootstrap 5. It features a clean and responsive layout, " \
+        "a sticky navigation bar, interactive components like modals and carousels, and consistent styling using Bootstrap's utility classes. " \
+        "Through this project, I learned how to use Bootstrap's grid system, layout utilities, and built-in JavaScript plugins to build a polished and mobile-friendly interface.",
+  main_image: File.open(Rails.root.join("app/assets/images/portfolio-6.png")),
+  thumb_image: File.open(Rails.root.join("app/assets/images/portfolio-6.png")),
+  position: 6
+)
+
+bootstrap_site.technologies.create!([
+  { name: "Bootstrap 5" },
+  { name: "HTML5" },
+  { name: "CSS3" },
+  { name: "Responsive Design" }
+])
+puts "#{Portfolio.count} portfolio items created"
+puts "#{Technology.count} technologies created"
+# Portfolios and Technologies - end
