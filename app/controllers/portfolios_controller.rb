@@ -25,7 +25,7 @@ class PortfoliosController < ApplicationController
   
     respond_to do |format|
       if @portfolio_item.save
-        format.html { redirect_to portfolios_path, notice: 'Portfolio item is now live.' }
+        format.html { redirect_to portfolios_path, notice: 'Portfolio Item is now live.' }
         format.turbo_stream { render turbo_stream: turbo_stream.replace('portfolio_form', partial: 'form', locals: { portfolio_item: @portfolio_item }) }
       else
         format.html { render :new }
