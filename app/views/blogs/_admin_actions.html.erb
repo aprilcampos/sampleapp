@@ -8,8 +8,13 @@
       <%= fa_icon('pencil-square-o') %>
     <% end %>
 
-    <%= link_to blog, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-secondary bg-white" do %>
-      <%= fa_icon('trash') %>
+    <%= button_to blog_path(blog),
+      method: :delete,
+      data: { turbo_confirm: 'Are you sure?' },
+      form: { class: "d-flex justify-content-center btn btn-sm btn-secondary bg-white" },
+      class: "bg-white border-0" do %>
+        <%= fa_icon('trash', class: 'icon-large') %>
     <% end %>
+
   </nav>
 <% end %>
