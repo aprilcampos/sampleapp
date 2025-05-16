@@ -9,3 +9,4 @@ window.consumer = consumer
 
 import "bootstrap"
 import "@popperjs/core"
+import "cocoon"
