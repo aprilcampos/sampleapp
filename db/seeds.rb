@@ -269,4 +269,6 @@ bootstrap_site.technologies.create!([
   { name: "CSS3" },
   { name: "Responsive Design" }
 ])
+puts "#{Portfolio.count} portfolio items created"
+puts "#{Technology.count} technologies created"
 # Portfolios and Technologies - end
