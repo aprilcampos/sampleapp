@@ -19,16 +19,34 @@
 
     <div class="col-md-5 text-start">
       <em><%= @portfolio_item.subtitle %></em>
-
-      <p><%= @portfolio_item.body %></p>
+      
+      <p class="mt-3"><%= @portfolio_item.body %></p>
 
       <hr>
 
       <h3>Technologies Used:</h3>
 
-      <% @portfolio_item.technologies.each do |t| %>
-      <p><%= t.name %></p>
+      <% techs = @portfolio_item.technologies %>
+
+      <% if techs.size > 6 %>
+        <div class="row">
+          <div class="col-md-6">
+            <% techs.first((techs.size / 2.0).ceil).each do |tech| %>
+              <span><%= tech.name %></span><br>
+            <% end %>
+          </div>
+          <div class="col-md-6">
+            <% techs.last((techs.size / 2.0).floor).each do |tech| %>
+              <span><%= tech.name %></span><br>
+            <% end %>
+          </div>
+        </div>
+      <% else %>
+        <% techs.each do |tech| %>
+          <span><%= tech.name %></span><br>
+        <% end %>
       <% end %>
+
     </div>
   </div>
 </div>
