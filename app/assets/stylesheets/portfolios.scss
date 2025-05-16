@@ -11,6 +11,22 @@
     font-size: 3.5rem;
   }
 }
+// File Inputs
+input[type="file"]::-webkit-file-upload-button {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+input[type="file"]::file-selector-button {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
 
 // @font-face {
 //   font-family: 'Lato';

@@ -6,18 +6,6 @@
   color: #fff !important;
 }
 
-/* Container */
-.blog-container {
-  border: 1px solid white;
-  padding: 1rem .5rem;
-}
-
-@media (min-width: 992px) {
-  .blog-container {
-    padding: 1rem;
-  }
-}
-
 // Blog sidebar
 .sidebar-card {
   min-height: 250px;

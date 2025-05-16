@@ -216,6 +216,18 @@ h6, .h6 {
  * Custom Styles
  */
 
+/* Container */
+.blog-container, .portfolio-container {
+  border: 1px solid white;
+  padding: 1rem .5rem;
+}
+
+@media (min-width: 992px) {
+  .blog-container, .portfolio-container {
+    padding: 1rem;
+  }
+}
+
 .card-block {
   color: #fff;
   text-align: left;
