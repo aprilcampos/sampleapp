@@ -4,7 +4,8 @@ This ongoing Ruby on Rails project portfolio has multiple features like:
 - CRUD for Blogs and Portfolio Items
 - Authentication (Login/Log Out/Sign up)
 - Authorization Access
-- Custom Routes
+- Drag-and-Drop Sorting
+- Real-time comments
 - Custom Ruby Gem
 - AWS services (S3 and IAM)
 - Responsiveness in smaller screen sizes
