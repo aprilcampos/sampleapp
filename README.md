@@ -1,29 +1,34 @@
 # April Campos Portfolio Application
 
 This ongoing Ruby on Rails project portfolio has multiple features like:
-- CRUD for Blogs and Portfolios
+- CRUD for Blogs and Portfolio Items
 - Authentication (Login/Log Out/Sign up)
 - Authorization Access
 - Custom Routes
 - Custom Ruby Gem
 - AWS services (S3 and IAM)
-- Implemented Design
+- Responsiveness in smaller screen sizes
 
-Live website URL:
+**Live website URL**:
 https://sampleapp-62mz.onrender.com/
 
-Preview:
+Note: Please wait for the initial page load, as it's hosted on a Free Render account.
 
-![image](https://github.com/user-attachments/assets/fd6dfa0e-1521-4ca0-a128-a5d8587b60ab)
+Application Preview:
 
-![image](https://github.com/user-attachments/assets/a6a01179-4d62-462b-bd90-43c0e9fbfe38)
+![image](https://github.com/user-attachments/assets/49368098-2296-4472-a2a0-a1a7cf54780b)
 
-![image](https://github.com/user-attachments/assets/fead01ae-bb02-4111-894f-bdd8fca9a1f3)
+![image](https://github.com/user-attachments/assets/aa7ea312-9249-44d7-9ddf-ef54a820a5d6)
 
-![image](https://github.com/user-attachments/assets/8817d6dc-d52e-4ad4-b50a-354027cdf098)
+![image](https://github.com/user-attachments/assets/a2b0701e-6f89-41b8-b9ee-1e12e479e868)
 
-![image](https://github.com/user-attachments/assets/caf63285-676d-4998-a348-908c1ee6e5bc)
+![image](https://github.com/user-attachments/assets/fb9b6e79-52af-4ee1-a083-ff9ed9549cc3)
 
+![image](https://github.com/user-attachments/assets/f3e450b5-3cec-4043-ad20-5435baad15e5)
+
+![image](https://github.com/user-attachments/assets/6ffa24e9-d432-43b9-bad9-f2c7a5cc2ae6)
+
+![image](https://github.com/user-attachments/assets/8a3a068d-931e-4374-9cc4-908744111a8c)
 
 * Ruby version
   - 3.1.2
